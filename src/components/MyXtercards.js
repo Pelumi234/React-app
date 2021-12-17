@@ -4,7 +4,7 @@ import { Row, Col, Offcanvas, Form } from 'react-bootstrap';
 import Card from 'react-bootstrap/card';
 import Xterplus from './Xterplus';
 import {  useState } from 'react';
-import Planetsidebar from './Xtersidebar';
+import Sidebarplanet from './Sidebarplanet';
 import {data as characters} from '../Dynamic/Array'
 
 
@@ -65,11 +65,11 @@ function MyXtercards({ name, ...props }) {
                 <Xterplus className="position-absolute bottom-0 end-0 mt-5" handleShow={handleShow}/> 
                 <Offcanvas show={show} onHide={handleClose} {...props} placement="end" className="offcanvas-style" md="auto" lg="auto" sm="auto">
                     <Offcanvas.Header closeButton className="">
-                        <Offcanvas.Title className="bigger  ms-3">{characters.characterName}</Offcanvas.Title>
+                        <Offcanvas.Title className="bigger  ms-3">{characterInfo.characterName}</Offcanvas.Title>
                     </Offcanvas.Header>
                     
                     <Offcanvas.Body >
-                        <p className="extra">{characters.info}</p>
+                        <p className="extra">{characterInfo.info}</p>
                         <Row className="mt-4">
                             <Col>
                                 <p className="little">Planet</p>
@@ -78,14 +78,14 @@ function MyXtercards({ name, ...props }) {
                             </Col>
                             <Col>
                                 <p className="little">Friends</p>
-                                <p className="small">{characters.pops}</p>
+                                <p className="small">{characterInfo.pops}</p>
 
                             </Col>
                         </Row>
                         <p className="small text-muted mt-3">FRIENDS</p>
                         {
                             <Row className="d-flex">
-                                <Planetsidebar />
+                                <Sidebarplanet />
 
                             </Row>
 
